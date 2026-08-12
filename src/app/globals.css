@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand palette — docs/DESIGN-SYSTEM.md */
+  --color-brick: #a83b32;
+  --color-burgundy: #6f2521;
+  --color-mustard: #d6a62e;
+  --color-gold: #c79a45;
+  --color-walnut: #3a241b;
+  --color-charcoal: #171513;
+  --color-cream: #f5efe4;
+  --color-beige: #e6d7c3;
+
+  --font-heading: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Fade-up reveal used across homepage sections */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out both;
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/*
+ * Hero background Ken Burns motion — subtle continuous zoom + pan on the
+ * restaurant exterior photo only. Starts and ends each cycle at the same
+ * transform (0% === 100%) so the loop has no visible jump. GPU-friendly:
+ * transform only, no layout properties touched.
+ */
+@keyframes hero-ken-burns {
+  0%,
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(var(--kb-scale, 1.06)) translate3d(var(--kb-x, -1.5%), var(--kb-y, -1%), 0);
+  }
+}
+
+.hero-bg-animate {
+  --kb-scale: 1.06;
+  --kb-x: -1.5%;
+  --kb-y: -1%;
+  animation: hero-ken-burns 16s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Reduced movement on mobile so the facade/signage stay stable and readable. */
+@media (max-width: 639px) {
+  .hero-bg-animate {
+    --kb-scale: 1.03;
+    --kb-x: -0.6%;
+    --kb-y: -0.4%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-animate {
+    animation: none;
+  }
+}
+
+/* Faint grain overlay for dark sections — adds depth without a visible texture image. */
+.bg-grain {
+  position: relative;
+}
+
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Utility to stagger fade-up children without inline style props everywhere. */
+.stagger-1 {
+  animation-delay: 0.08s;
+}
+.stagger-2 {
+  animation-delay: 0.16s;
+}
+.stagger-3 {
+  animation-delay: 0.24s;
+}
