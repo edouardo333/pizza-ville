@@ -35,8 +35,8 @@ const BANNER_SIZES = "(min-width: 1024px) 460px, (min-width: 640px) 620px, 92vw"
  * 7 photos tiled edge-to-edge with explicit start positions, same discipline
  * as before: mobile is a 2-col grid (rows 1-8), tablet a 3-col grid (rows
  * 1-6), desktop a 4-col grid (rows 1-4) — every breakpoint's cell areas sum
- * to rows*cols exactly, so nothing leaves a gap. "À table" (table#01) is
- * sized identically to the other "À table" photo (table#02) — same
+ * to rows*cols exactly, so nothing leaves a gap. "À table" (table-01) is
+ * sized identically to the other "À table" photo (table-02) — same
  * col-span-1 row-span-2 footprint — so the two carry equal visual weight.
  */
 const PHOTOS: Photo[] = [
@@ -57,7 +57,7 @@ const PHOTOS: Photo[] = [
     sizes: NARROW_SIZES,
   },
   {
-    src: galleryImage("table#02.jpg"),
+    src: galleryImage("table-02.jpg"),
     alt: "Pizzas servies à table",
     label: "À table",
     cell: "col-span-1 row-span-2 col-start-2 row-start-3 sm:col-start-1 sm:row-start-3 lg:col-start-4 lg:row-start-1",
@@ -73,7 +73,7 @@ const PHOTOS: Photo[] = [
     sizes: WIDE_SIZES,
   },
   {
-    src: galleryImage("table#01.jpg"),
+    src: galleryImage("table-01.jpg"),
     alt: "Plats de crevettes servis à table",
     label: "À table",
     cell: "col-span-1 row-span-2 col-start-1 row-start-5 sm:col-start-2 sm:row-start-3 lg:col-start-3 lg:row-start-3",

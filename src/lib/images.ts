@@ -1,7 +1,6 @@
 /**
- * Some filenames under public/images/gallery contain "#" and accented
- * characters (e.g. "plat#03.jpg", "entrée#01.jpg"). Those characters must be
- * percent-encoded or the browser treats "#" as a URL fragment separator.
+ * Percent-encodes filenames used across public/images so any special
+ * characters in a path segment are safely URL-encoded.
  */
 export function galleryImage(filename: string): string {
   return `/images/gallery/${encodeURIComponent(filename)}`;

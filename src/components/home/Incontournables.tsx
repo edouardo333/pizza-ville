@@ -15,12 +15,12 @@ import { Lightbox } from "@/components/ui/Lightbox";
 // the table, or a stray hand in frame — stays the focal point once the
 // image is cropped into a fixed-height card.
 const ITEMS = [
-  { image: galleryImage("plat#03.jpg"), position: "50% 62%" }, // Pizza — slice + crust, wall cropped out
-  { image: galleryImage("plat#08.jpg"), position: "50% 40%" }, // Fruits de mer — fried shrimp & calamari
-  { image: galleryImage("plat#07.jpg"), position: "50% 45%" }, // Pâtes & lasagne — meat sauce close-up
-  { image: galleryImage("plat#04.jpg"), position: "50% 48%" }, // Subs & club sandwichs — sub + fries, top-down
-  { image: galleryImage("entrée#01.jpg"), position: "50% 18%" }, // Pain à l'ail & fondu parmesan — golden, cheesy loaf
-  { image: galleryImage("dessert#01.jpg"), position: "50% 42%" }, // Desserts — cheesecake with berry coulis
+  { image: galleryImage("plat-03.jpg"), position: "50% 62%" }, // Pizza — slice + crust, wall cropped out
+  { image: galleryImage("plat-08.jpg"), position: "50% 40%" }, // Fruits de mer — fried shrimp & calamari
+  { image: galleryImage("plat-07.jpg"), position: "50% 45%" }, // Pâtes & lasagne — meat sauce close-up
+  { image: galleryImage("plat-04.jpg"), position: "50% 48%" }, // Subs & club sandwichs — sub + fries, top-down
+  { image: galleryImage("entree-01.jpg"), position: "50% 18%" }, // Pain à l'ail & fondu parmesan — golden, cheesy loaf
+  { image: galleryImage("dessert-01.jpg"), position: "50% 42%" }, // Desserts — cheesecake with berry coulis
 ];
 
 export function Incontournables() {

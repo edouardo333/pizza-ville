@@ -14,10 +14,10 @@ import { Lightbox } from "@/components/ui/Lightbox";
 // tuned by hand so the food itself stays the focal point in the wide
 // landscape crop.
 const CATEGORY_PHOTOS = [
-  { image: galleryImage("plat#03.jpg"), position: "50% 58%" }, // Pizzas — slice + crust
-  { image: galleryImage("plat#05.jpg"), position: "50% 42%" }, // Brochettes & grillades — seared, grilled fillet
-  { image: galleryImage("plat#14.jpg"), position: "50% 55%" }, // Poutines & classiques — poutine, fries + gravy
-  { image: galleryImage("plat#02.jpg"), position: "50% 55%" }, // Pâtes, salades & autres — loaded plate + fries
+  { image: galleryImage("plat-03.jpg"), position: "50% 58%" }, // Pizzas — slice + crust
+  { image: galleryImage("plat-05.jpg"), position: "50% 42%" }, // Brochettes & grillades — seared, grilled fillet
+  { image: galleryImage("plat-14.jpg"), position: "50% 55%" }, // Poutines & classiques — poutine, fries + gravy
+  { image: galleryImage("plat-02.jpg"), position: "50% 55%" }, // Pâtes, salades & autres — loaded plate + fries
 ];
 
 export function MenuPreview() {

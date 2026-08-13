@@ -16,7 +16,7 @@ export function FinalCta() {
       {/* Photographic backdrop + layered color wash for a richer, deeper red/burgundy field */}
       <div className="absolute inset-0">
         <Image
-          src={galleryImage("plat#11.jpg")}
+          src={galleryImage("plat-11.jpg")}
           alt=""
           fill
           loading="lazy"
